@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTÃO - Produtora Musical</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen active">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="logo">
+                        <i class="fas fa-music"></i>
+                        <h1>Gerenciador</h1>
+                        <p>Gestão para Produtoras Musicais</p>
+                    </div>
+                    
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Entrar
+                        </button>
+                    </form>
+                    
+                    <div class="login-footer">
+                        <p>Não tem uma conta? <a href="#" id="showRegister">Cadastre-se</a></p>
+                        <p style="margin-top: 10px; font-size: 12px;">
+                            <a href="#" id="resetSystem" style="color: #dc3545;">Resetar Sistema</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Screen -->
+        <div id="registerScreen" class="screen">
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="logo">
+                        <i class="fas fa-music"></i>
+                        <h1>Criar Conta</h1>
+                        <p>Sistema Ayane</p>
+                    </div>
+                    
+                    <form id="registerForm" class="login-form">
+                        <div class="form-group">
+                            <label for="regName">Nome Completo</label>
+                            <input type="text" id="regName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regEmail">Email</label>
+                            <input type="email" id="regEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regPassword">Senha</label>
+                            <input type="password" id="regPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regConfirmPassword">Confirmar Senha</label>
+                            <input type="password" id="regConfirmPassword" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-user-plus"></i>
+                            Cadastrar
+                        </button>
+                    </form>
+                    
+                    <div class="login-footer">
+                        <p>Já tem uma conta? <a href="#" id="showLogin">Fazer Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div id="dashboardScreen" class="screen">
+            <nav class="sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-music"></i>
+                    <h2>Ayane</h2>
+                </div>
+                
+                <ul class="sidebar-menu">
+                    <li class="menu-item active" data-screen="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="menu-item" data-screen="userManagement">
+                        <i class="fas fa-users"></i>
+                        <span>Gestão de Usuários</span>
+                    </li>
+                    <li class="menu-item" data-screen="uploadMusical">
+                        <i class="fas fa-upload"></i>
+                        <span>Upload Musical</span>
+                    </li>
+                    <li class="menu-item" data-screen="orcamentos">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Orçamentos</span>
+                    </li>
+                    <li class="menu-item" data-screen="notasFiscais">
+                        <i class="fas fa-receipt"></i>
+                        <span>Notas Fiscais</span>
+                    </li>
+                    <li class="menu-item" data-screen="financeiro">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Financeiro</span>
+                    </li>
+                </ul>
+                
+                <div class="sidebar-footer">
+                    <div class="user-info">
+                        <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                        <div class="user-details">
+                            <span class="user-name" id="userName">Usuário</span>
+                            <span class="user-role" id="userRole">Admin</span>
+                        </div>
+                    </div>
+                    <button id="logoutBtn" class="btn-logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <main class="main-content">
+                <header class="top-bar">
+                    <div class="breadcrumb">
+                        <span id="currentPage">Dashboard</span>
+                    </div>
+                    <div class="top-bar-actions">
+                        <button class="btn-notification">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Dashboard Content -->
+                <div id="dashboardContent" class="content-screen active">
+                    <div class="dashboard-grid">
+                        <div class="card stats-card">
+                            <div class="card-header">
+                                <h3>Resumo Geral</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <span class="stat-number" id="totalUsers">0</span>
+                                        <span class="stat-label">Usuários</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-music"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <span class="stat-number" id="totalMusics">0</span>
+                                        <span class="stat-label">Músicas</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-file-invoice-dollar"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <span class="stat-number" id="totalOrcamentos">0</span>
+                                        <span class="stat-label">Orçamentos</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <span class="stat-number" id="totalRevenue">R$ 0</span>
+                                        <span class="stat-label">Receita</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card recent-activities">
+                            <div class="card-header">
+                                <h3>Atividades Recentes</h3>
+                            </div>
+                            <div class="activities-list" id="activitiesList">
+                                <!-- Activities will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Management Content -->
+                <div id="userManagementContent" class="content-screen">
+                    <div class="content-header">
+                        <h2>Gestão de Usuários</h2>
+                        <button class="btn-primary" id="addUserBtn">
+                            <i class="fas fa-plus"></i>
+                            Adicionar Usuário
+                        </button>
+                    </div>
+                    
+                    <div class="users-table-container">
+                        <table class="users-table" id="usersTable">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Perfil</th>
+                                    <th>Status</th>
+                                    <th>Último Acesso</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- Users will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Upload Musical Content -->
+                <div id="uploadMusicalContent" class="content-screen">
+                    <div class="content-header">
+                        <h2>Upload Musical</h2>
+                        <button class="btn-primary" id="addMusicBtn">
+                            <i class="fas fa-plus"></i>
+                            Adicionar Música
+                        </button>
+                    </div>
+                    
+                    <div class="music-cards-grid" id="musicCardsGrid">
+                        <!-- Cards de músicas serão renderizados aqui pelo JS -->
+                    </div>
+                </div>
+
+                <!-- Orçamentos Content -->
+                <div id="orcamentosContent" class="content-screen">
+                    <div class="content-header">
+                        <h2>Orçamentos</h2>
+                        <button class="btn-primary" id="newOrcamentoBtn">
+                            <i class="fas fa-plus"></i>
+                            Novo Orçamento
+                        </button>
+                    </div>
+                    
+                    <div class="orcamentos-grid" id="orcamentosGrid">
+                        <!-- Orçamentos will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Notas Fiscais Content -->
+                <div id="notasFiscaisContent" class="content-screen">
+                    <div class="content-header">
+                        <h2>Notas Fiscais</h2>
+                        <button class="btn-primary" id="newNotaFiscalBtn">
+                            <i class="fas fa-plus"></i>
+                            Nova Nota Fiscal
+                        </button>
+                    </div>
+                    
+                    <div class="notas-fiscais-grid" id="notasFiscaisGrid">
+                        <!-- Notas Fiscais will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Financeiro Content -->
+                <div id="financeiroContent" class="content-screen">
+                    <div class="content-header">
+                        <h2>Financeiro</h2>
+                        <button class="btn-primary" id="addTransactionBtn">
+                            <i class="fas fa-plus"></i>
+                            Nova Transação
+                        </button>
+                    </div>
+                    
+                    <div class="financeiro-grid">
+                        <div class="card financial-summary">
+                            <div class="card-header">
+                                <h3>Resumo Financeiro</h3>
+                            </div>
+                            <div class="financial-stats">
+                                <div class="financial-stat">
+                                    <span class="stat-label">Entradas</span>
+                                    <span class="stat-value positive" id="totalEntradas">R$ 0,00</span>
+                                </div>
+                                <div class="financial-stat">
+                                    <span class="stat-label">Saídas</span>
+                                    <span class="stat-value negative" id="totalSaidas">R$ 0,00</span>
+                                </div>
+                                <div class="financial-stat">
+                                    <span class="stat-label">Reservado</span>
+                                    <span class="stat-value neutral" id="totalReservado">R$ 0,00</span>
+                                </div>
+                                <div class="financial-stat">
+                                    <span class="stat-label">Saldo</span>
+                                    <span class="stat-value" id="saldoTotal">R$ 0,00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card chart-container">
+                            <div class="card-header">
+                                <h3>Gráfico Financeiro</h3>
+                            </div>
+                            <canvas id="financialChart"></canvas>
+                        </div>
+                        
+                        <div class="card transactions-list">
+                            <div class="card-header">
+                                <h3>Últimas Transações</h3>
+                            </div>
+                            <div class="transactions-container" id="transactionsList">
+                                <!-- Transactions will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal" id="modal">
+            <!-- Modal content will be dynamically inserted -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="js/demo-data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/userManagement.js"></script>
+    <script src="js/uploadMusical.js"></script>
+    <script src="js/orcamentos.js"></script>
+    <script src="js/notasFiscais.js"></script>
+    <script src="js/financeiro.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html> 
