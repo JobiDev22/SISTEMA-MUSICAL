@@ -1,0 +1,799 @@
+/* Component-specific styles */
+
+/* Form Styles */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #f5f5f5;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    background: #232323;
+    color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+    background: #232323;
+    color: #fff;
+}
+
+/* Error states */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Item rows for forms */
+.item-row {
+    display: grid;
+    grid-template-columns: 2fr 80px 120px 100px 40px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #232323;
+    border-radius: 8px;
+}
+
+.btn-add-item {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-remove-item {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card Styles */
+.card {
+    background: #232323;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.card-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #333;
+    background: #181818;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Orçamento and Nota Fiscal Cards */
+.orcamento-card,
+.nota-fiscal-card {
+    background: #232323;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.orcamento-card:hover,
+.nota-fiscal-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+}
+
+.orcamento-header,
+.nota-header {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #181818;
+}
+
+.orcamento-number,
+.nota-number {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.orcamento-number .label,
+.nota-number .label {
+    font-weight: 600;
+    color: #fff;
+    font-size: 16px;
+}
+
+.orcamento-actions,
+.nota-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.orcamento-content,
+.nota-content {
+    padding: 20px;
+    background: #232323;
+    color: #fff;
+}
+
+.orcamento-info,
+.nota-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-item label {
+    font-size: 12px;
+    color: #bbb;
+    font-weight: 500;
+}
+
+.info-item span {
+    font-size: 14px;
+    color: #fff;
+}
+
+.orcamento-description,
+.nota-description {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.orcamento-footer,
+.nota-footer {
+    padding: 15px 20px;
+    background: #181818;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #333;
+    color: #fff;
+}
+
+.orcamento-date,
+.nota-date {
+    font-size: 12px;
+    color: #bbb;
+}
+
+/* Transaction Items */
+.transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    color: #fff;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-title {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.transaction-date {
+    font-size: 12px;
+    color: #bbb;
+}
+
+.transaction-amount {
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 15px;
+    color: #fff;
+}
+
+.transaction-amount.entrada {
+    color: #4caf50;
+}
+
+.transaction-amount.saida {
+    color: #dc3545;
+}
+
+.transaction-amount.reservado {
+    color: #ffc107;
+}
+
+.transaction-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #232323;
+    color: #fff;
+}
+
+.status-active,
+.status-emitida,
+.status-aprovado {
+    background: #232323;
+    color: #4caf50;
+}
+
+.status-pending,
+.status-pendente {
+    background: #232323;
+    color: #ffc107;
+}
+
+.status-inactive,
+.status-cancelada,
+.status-rejeitado {
+    background: #232323;
+    color: #dc3545;
+}
+
+.status-reservado {
+    background: #232323;
+    color: #ffc107;
+}
+
+/* Role Badges */
+.role-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #232323;
+    color: #fff;
+}
+
+.role-admin {
+    background: #232323;
+    color: #fff;
+}
+
+.role-user {
+    background: #232323;
+    color: #bbb;
+}
+
+/* User Info Cell */
+.user-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Music Link */
+.music-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.music-link:hover {
+    text-decoration: underline;
+}
+
+/* No Data States */
+.no-data,
+.no-data-card {
+    text-align: center;
+    padding: 40px 20px;
+    color: #bbb;
+}
+
+.no-data i,
+.no-data-card i {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.no-data-card h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Loading States */
+.loading-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #232323;
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Alert Styles */
+.alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #232323;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.alert-info {
+    background: #232323;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.alert-success {
+    background: #232323;
+    color: #4caf50;
+    border: 1px solid #333;
+}
+
+.alert-warning {
+    background: #232323;
+    color: #ffc107;
+    border: 1px solid #333;
+}
+
+.alert-error {
+    background: #232323;
+    color: #dc3545;
+    border: 1px solid #333;
+}
+
+/* Modal Animations */
+.modal-show {
+    animation: modalSlideIn 0.3s ease;
+}
+
+.modal-hide {
+    animation: modalSlideOut 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalSlideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+/* Button Styles */
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 12px;
+    background: #333;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #181818;
+}
+
+/* Chart Container */
+.chart-container {
+    padding: 25px;
+    height: 400px;
+    background: #232323;
+    border-radius: 12px;
+}
+
+/* Financial Summary */
+.financial-summary {
+    padding: 25px;
+    background: #232323;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.financial-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.financial-stat {
+    text-align: center;
+    padding: 20px;
+    background: #232323;
+    border-radius: 12px;
+    color: #fff;
+}
+
+/* Table Styles */
+.itens-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #232323;
+    color: #fff;
+}
+
+.itens-table th,
+.itens-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.itens-table th {
+    background: #181818;
+    font-weight: 600;
+    color: #fff;
+}
+
+.itens-table tfoot {
+    font-weight: bold;
+}
+
+.total-label {
+    text-align: right;
+}
+
+.total-value {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .item-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .orcamento-info,
+    .nota-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .orcamento-header,
+    .nota-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .orcamento-footer,
+    .nota-footer {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .transaction-actions {
+        align-self: flex-end;
+    }
+    
+    .financial-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .financial-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+} 
+
+/* Music Cards Grid (Notion Style) */
+.music-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+.music-card {
+    background: #232323;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s, transform 0.2s;
+    border: 1.5px solid #333;
+}
+.music-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+    transform: translateY(-2px) scale(1.02);
+    border-color: #fff;
+}
+.music-card-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(34,34,34,0.85);
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 2;
+}
+.music-card:hover .music-card-delete {
+    opacity: 1;
+}
+.music-card-cover {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background: #181818;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.music-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.music-card-placeholder {
+    font-size: 2rem;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+}
+.music-card-body {
+    padding: 18px 16px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.music-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.music-card-artists {
+    font-size: 0.98rem;
+    color: #bbb;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.music-card-date {
+    font-size: 0.92rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+.music-card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+.music-tag {
+    background: #333;
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    display: inline-block;
+}
+.music-tag.status-disponivel {
+    background: #232323;
+    color: #4caf50;
+}
+.music-tag.status-distribuida {
+    background: #232323;
+    color: #00bcd4;
+}
+.music-tag.status-em {
+    background: #232323;
+    color: #ffc107;
+}
+
+/* Painel lateral para edição (Notion style) */
+.music-edit-panel {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    max-width: 480px;
+    width: 100%;
+    background: #181818 !important;
+    box-shadow: -4px 0 32px rgba(0,0,0,0.25);
+    border-radius: 0;
+    z-index: 3001;
+    animation: slideInPanel 0.3s cubic-bezier(.4,1.6,.6,1) 1;
+    overflow-y: auto;
+}
+@keyframes slideInPanel {
+    from { right: -500px; opacity: 0; }
+    to { right: 0; opacity: 1; }
+}
+.music-edit-body {
+    background: #181818;
+    color: #fff;
+    padding: 24px 18px 12px 18px;
+}
+.music-edit-body label {
+    color: #bbb;
+    font-size: 0.98rem;
+    margin-bottom: 2px;
+}
+.music-edit-body input,
+.music-edit-body select,
+.music-edit-body textarea {
+    background: #232323;
+    color: #fff;
+    border: 1.5px solid #333;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+.music-edit-body input:focus,
+.music-edit-body select:focus,
+.music-edit-body textarea:focus {
+    border-color: #fff;
+    outline: none;
+}
+.music-edit-body textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+@media (max-width: 600px) {
+    .music-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .music-edit-panel {
+        max-width: 100vw;
+    }
+} 
